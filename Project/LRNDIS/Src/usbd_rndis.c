@@ -47,7 +47,6 @@ static uint8_t  rndis_iso_in_incomplete                 (USBD_HandleTypeDef *pde
 static uint8_t  rndis_iso_out_incomplete                (USBD_HandleTypeDef *pdev, uint8_t epnum);
 static uint8_t  *usbd_rndis_GetDeviceQualifierDesc      (uint16_t *length);
 static uint8_t  *usbd_rndis_GetCfgDesc                  (uint16_t *length);
-extern uint32_t XXX;                    //TODO
 /*********************************************
 RNDIS specific management functions
 *********************************************/
@@ -58,13 +57,13 @@ uint8_t permanent_hwaddr[6] = { PERMANENT_HWADDR };
 
 usb_eth_stat_t usb_eth_stat = { 0, 0, 0, 0 };
 uint32_t oid_packet_filter = 0x0000000;
-char rndis_rx_buffer[RNDIS_RX_BUFFER_SIZE];
-uint8_t usb_rx_buffer[RNDIS_DATA_OUT_SZ];
-uint8_t *rndis_tx_ptr = NULL;
-bool rndis_first_tx = true;
-bool rndis_data_tx = false;
+//char rndis_rx_buffer[RNDIS_RX_BUFFER_SIZE];
+//uint8_t usb_rx_buffer[RNDIS_DATA_OUT_SZ];
+//uint8_t *rndis_tx_ptr = NULL;
+//bool rndis_first_tx = true;
+//bool rndis_data_tx = false;
 bool rndis_ZLP_required = false;
-int rndis_sended = 0;
+//int rndis_sended = 0;
 rndis_state_t rndis_state;
 extern PCD_HandleTypeDef hpcd_USB_FS;
 
