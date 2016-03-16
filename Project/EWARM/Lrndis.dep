@@ -1,0 +1,1402 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>3503717024</fileChecksum>
+  <configuration>
+    <name>TE-STM32F103</name>
+    <outputs>
+      <file>$PROJ_DIR$\..\WEB\dns-server\dnserver.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\apps\httpserver_raw\fs.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\apps\httpserver_raw\httpd.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\def.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\init.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\mem.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\memp.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\netif.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\pbuf.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\raw.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\stats.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\tcp.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\tcp_in.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\tcp_out.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\timers.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\udp.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\ipv4\icmp.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\ipv4\inet_chksum.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\ipv4\ip.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\ipv4\ip_addr.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\ipv4\ip_frag.c</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\netif\etharp.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32_USB_Device_Library\Core\Inc\usbd_def.h</file>
+      <file>$PROJ_DIR$\..\Inc\communication.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\usbd_conf.o</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32_USB_Device_Library\Core\Inc\usbd_ioreq.h</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pcd.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_it.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\bsp_driver_sd.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\httpd.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_gpio.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\usbd_rndis.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\communication.o</file>
+      <file>$PROJ_DIR$\..\..\Libraries\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\usbd_rndis.pbi</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\sd_diskio.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\communication.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\usbd_ioreq.pbi</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\dhserver.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_it.pbi</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_rcc.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\ff_gen_drv.o</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32_USB_Device_Library\Core\Inc\usbd_core.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_rcc_ex.pbi</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_sd.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\snmp.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\tcp_impl.h</file>
+      <file>$PROJ_DIR$\..\LRNDIS\Inc\usbd_conf.h</file>
+      <file>$PROJ_DIR$\..\WEB\dns-server\dnserver.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\arch\perf.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\sockets.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\netif.h</file>
+      <file>$PROJ_DIR$\..\Inc\stm32f1xx_it.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\arch\bpstruct.h</file>
+      <file>$PROJ_DIR$\..\LRNDIS\Inc\usb_device.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\memp.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\ipv4\lwip\ip.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\debug.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\time.pbi</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\tcpip.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_ll_sdmmc.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\init.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\fs.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\timers.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\system_stm32f1xx.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\Lrndis.pbd</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_pcd.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\tcp_in.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\udp.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\syscall.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\tcp.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\memp.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\tcp_in.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\ccsbcs.pbi</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32_USB_Device_Library\Core\Inc\usbd_ctlreq.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\ff.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_sd.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_dma.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\def.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_pcd.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\usbd_core.pbi</file>
+      <file>$PROJ_DIR$\..\..\Libraries\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal.pbi</file>
+      <file>$PROJ_DIR$\..\Inc\fatfs.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\pbuf.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\ipv4\lwip\igmp.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\timers.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\memp_std.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\ipv4\lwip\inet_chksum.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\def.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\tcp.h</file>
+      <file>$PROJ_DIR$\..\..\Libraries\FatFs\diskio.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\ipv4\lwip\icmp.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\ipv4\lwip\autoip.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\ipv4\lwip\ip_addr.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwipopts.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\snmp_msg.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\udp.h</file>
+      <file>$PROJ_DIR$\..\Inc\ffconf.h</file>
+      <file>$PROJ_DIR$\..\Inc\mxconstants.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\arch\epstruct.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\arch.h</file>
+      <file>$PROJ_DIR$\..\WEB\dhcp-server\dhserver.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\dns.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\netif\etharp.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\snmp_structs.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\mem.h</file>
+      <file>$PROJ_DIR$\..\Inc\bsp_driver_sd.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\apps\httpserver_raw\httpd.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_dma.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\pbuf.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\mem.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\raw.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\httpd.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_ll_sdmmc.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\fatfs.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\ip_addr.pbi</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_ll_usb.pbi</file>
+      <file>$PROJ_DIR$\..\..\Libraries\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xe.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\usb_device.pbi</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_pcd_ex.o</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\apps\httpserver_raw\httpd_structs.h</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio_ex.h</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h</file>
+      <file>$PROJ_DIR$\..\..\Libraries\CMSIS\Include\core_cm3.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\apps\httpserver_raw\fs.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\tcp_out.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_pcd_ex.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\dnserver.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\hw_config.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\main.o</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\usb_device.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_msp.o</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pcd_ex.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\dnserver.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\fs.pbi</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_ll_usb.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\ff.pbi</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_sdmmc.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\diskio.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\usbd_ctlreq.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_pwr.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\usbd_core.o</file>
+      <file>$PROJ_DIR$\..\..\Libraries\CMSIS\Include\core_cmInstr.h</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\ff_gen_drv.pbi</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_ll_usb.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_cortex.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\def.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\usbd_ioreq.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\tcp.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\udp.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\system_stm32f1xx.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\dhserver.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\usbd_ctlreq.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\ip_addr.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\bsp_driver_sd.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$PROJ_DIR$\..\LRNDIS\Inc\rndis_protocol.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\api.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\dhcp.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\sys.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\arch\cc.h</file>
+      <file>$PROJ_DIR$\..\Inc\stm32f1xx_hal_conf.h</file>
+      <file>$PROJ_DIR$\..\LRNDIS\Inc\usbd_rndis.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\ipv4\lwip\ip_frag.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\stats.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\init.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\..\LRNDIS\Inc\usbd_desc.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\err.h</file>
+      <file>$PROJ_DIR$\..\..\Libraries\FatFs\ff.h</file>
+      <file>$PROJ_DIR$\..\..\Libraries\FatFs\ff_gen_drv.h</file>
+      <file>$PROJ_DIR$\..\Inc\hw_config.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\arch\cpu.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\netif\ppp_oe.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\..\..\Libraries\FatFs\integer.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\opt.h</file>
+      <file>$PROJ_DIR$\..\LRNDIS\Inc\ndis.h</file>
+      <file>$PROJ_DIR$\..\Inc\time.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\raw.h</file>
+      <file>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\include\lwip\api_msg.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_cortex.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\diskio.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\sd_diskio.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\hw_config.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\syscall.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\usbd_desc.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\usbd_desc.pbi</file>
+      <file>$PROJ_DIR$\..\..\Libraries\CMSIS\Include\core_cmFunc.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\etharp.pbi</file>
+      <file>$PROJ_DIR$\..\..\Libraries\FatFs\drivers\sd_diskio.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\memp.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\ccsbcs.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\netif.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\mem.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\startup_stm32f103xe.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_rcc.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\init.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\time.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_rcc_ex.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\inet_chksum.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\ip_frag.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\ip.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\ip.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_sd.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\etharp.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\raw.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\netif.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\usbd_conf.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stats.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\icmp.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\tcp_out.o</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_def.h</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_pwr.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\inet_chksum.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Exe\audio103 Configuration.out</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\fatfs.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\ip_frag.o</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\icmp.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_msp.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\timers.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\pbuf.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stats.pbi</file>
+      <file>$PROJ_DIR$\TE-STM32F103\Obj\stm32f1xx_hal_gpio.o</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_ll_usb.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\CMSIS\Device\ST\STM32F1xx\Source\Templates\iar\startup_stm32f103xe.s</file>
+      <file>$PROJ_DIR$\..\Src\bsp_driver_sd.c</file>
+      <file>$PROJ_DIR$\..\Src\fatfs.c</file>
+      <file>$PROJ_DIR$\..\Src\communication.c</file>
+      <file>$PROJ_DIR$\..\Src\hw_config.c</file>
+      <file>$PROJ_DIR$\..\Src\main.c</file>
+      <file>$PROJ_DIR$\..\Src\stm32f1xx_it.c</file>
+      <file>$PROJ_DIR$\..\Src\stm32f1xx_hal_msp.c</file>
+      <file>$PROJ_DIR$\..\Src\time.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\CMSIS\Device\ST\STM32F1xx\Source\Templates\system_stm32f1xx.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dma.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pcd.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pcd_ex.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pwr.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc_ex.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_sd.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_ll_sdmmc.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\FatFs\option\ccsbcs.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\FatFs\diskio.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\FatFs\drivers\sd_diskio.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\FatFs\ff.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\FatFs\ff_gen_drv.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32_USB_Device_Library\Core\Src\usbd_core.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\FatFs\option\syscall.c</file>
+      <file>$PROJ_DIR$\..\LRNDIS\Src\usb_device.c</file>
+      <file>$PROJ_DIR$\..\LRNDIS\Src\usbd_conf.c</file>
+      <file>$PROJ_DIR$\..\LRNDIS\Src\usbd_desc.c</file>
+      <file>$PROJ_DIR$\..\LRNDIS\Src\usbd_rndis.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c</file>
+      <file>$PROJ_DIR$\..\..\Libraries\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c</file>
+      <file>$PROJ_DIR$\..\WEB\dhcp-server\dhserver.c</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\dns-server\dnserver.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 145</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 153</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 52 200 62 49 202 65 108 64 191 56 61 188 95 182 67 101 115 184 197 203 107 68 193 110 96 57 106 59 114 66 118</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\apps\httpserver_raw\fs.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 73</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 154</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 101 194 201 111 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 121 142 193 94 195 103 217 182 67</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\apps\httpserver_raw\httpd.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 29</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 127</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 122 203 107 68 115 184 197 193 96 189 120 63 99 137 102 66 101 106 59 114 57 104 194 201 111 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 121 142 182 67 178</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\def.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 89</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 168</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 101</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\init.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 224</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 72</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 190 189 120 63 99 183 96 193 57 106 101 59 114 54 66 206 110 50 102 104 109 48 119 105 97 117 98 118 180</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\mem.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 221</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 125</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 101 120 183 189 63 99 193 182 62 49 202 65 108 64 191 188 67</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\memp.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 218</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 82</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 63 99 96 193 110 57 106 101 59 114 66 206 50 102 120 104 97 180 207 70 183 98 189 118 187 119 109 48 117 198 182 62 49 202 65 108 64 191 188 67</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\netif.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 220</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 235</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 101 106 59 114 57 193 96 50 102 120 66 104 48 97 118 189 63 99</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\pbuf.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 124</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 249</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 189 120 63 99 101 96 193 183 53 50 102 66 106 59 114 57 104 182 62 49 202 65 108 64 191 188 67</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\raw.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 234</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 126</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 101 63 99 106 59 114 57 193 96 206 66 189 120 53 182 62 49 202 65 108 64 191 188 67</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\stats.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 237</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 250</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 101 189 120 63 99 182 62 49 202 65 108 64 191 188 67</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\tcp.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 170</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 81</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 101 120 63 99 48 106 59 114 102 96 193 66 57 104 50 189 182 62 49 202 65 108 64 191 188 67</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\tcp_in.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 78</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 83</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 50 102 120 96 193 66 101 106 59 114 57 104 63 99 100 189 48 53</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\tcp_out.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 239</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 143</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 50 102 120 96 193 66 101 106 59 114 57 104 63 99 100 189 48 182 62 49 202 65 108 64 191 188 67</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\timers.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 74</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 248</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 98 193 50 102 120 96 66 101 106 59 114 57 104 63 99 70 187 118 181 105 97 117 183</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\udp.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 79</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 171</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 110 96 193 57 106 101 59 114 66 63 99 100 104 189 120 48 53 181 182 62 49 202 65 108 64 191 188 67</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\ipv4\icmp.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 238</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 246</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 104 96 193 106 101 59 114 57 100 66 189 120 63 99 48 182 62 49 202 65 108 64 191 188 67</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\ipv4\inet_chksum.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 242</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 227</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 100 96 193 106 101 59 114 55 62 49 202 65 108 64 191 188 182 67</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\ipv4\ip.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 229</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 231</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 66 101 96 193 106 59 114 57 120 187 100 104 97 206 110 50 102 48 181 105 189 63 99 53 182 62 49 202 65 108 64 191 188 67</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\ipv4\ip_addr.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 176</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 106 101 59 114 57 193 96</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\core\ipv4\ip_frag.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 245</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 228</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 187 193 96 57 106 101 59 114 66 100 48 189 120 63 99 104 182 62 49 202 65 108 64 191 188 67</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\lwip-1.4.1\src\netif\etharp.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 233</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 216</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203 107 68 115 184 197 106 101 59 114 66 96 193 57 189 120 63 99 48 181 105 118 182 62 49 202 65 108 64 191 188 67</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_ll_usb.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 156</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 132</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\CMSIS\Device\ST\STM32F1xx\Source\Templates\iar\startup_stm32f103xe.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 222</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 243</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\bsp_driver_sd.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 177</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 121 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\fatfs.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 129</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 244</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 94 194 201 111 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 121 195 103 217</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\communication.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 32</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 23 190 203 107 68 115 184 197 50 102 120 96 193 66 101 106 59 114 57 104 118 186 25 22 51 178 182 67 45 85 56 55 179 204 122 116 110 52 205</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\hw_config.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 211</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 146</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 196 205 56 55 60 22 51 178 182 67</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 147</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 230</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 94 194 201 111 121 195 103 217 205 56 55 196 23</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\stm32f1xx_it.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 27</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 58 121</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\stm32f1xx_hal_msp.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 151</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 247</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\time.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 225</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 205 56 200 62 49 202 65 108 64 191 55 188 164 185 112 131 240 33 133 141 163 113 199 215 92 149 61 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 196</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\CMSIS\Device\ST\STM32F1xx\Source\Templates\system_stm32f1xx.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 75</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 172</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 164 185 112 131 240 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 175</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 93</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 208</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 167</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dma.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 123</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 251</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pcd.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 77</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 90</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pcd_ex.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 136</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 144</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pwr.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 241</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 161</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 223</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc_ex.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 226</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_sd.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 232</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 87</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_ll_sdmmc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 128</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 71</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\FatFs\option\ccsbcs.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 219</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 194 201 111 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 121</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\FatFs\diskio.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 209</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 159</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 103 201 195 194 111 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 121</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\FatFs\drivers\sd_diskio.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 36</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 210</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 182 62 49 202 65 108 64 191 188 67 195 103 201 194 111 164 185 112 131 240 33 133 141 200 163 113 199 215 92 149 61 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 121</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\FatFs\ff.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 86</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 157</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 194 201 111 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 121 103</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\FatFs\ff_gen_drv.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 44</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 165</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 195 103 201 194 111 164 185 112 131 240 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 121</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\STM32_USB_Device_Library\Core\Src\usbd_core.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 162</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45 51 61 62 49 202 65 108 64 191 188 95 178 182 67 33 133 141 200 163 113 199 215 92 164 185 112 131 240 149 35 135 138 140 155 42 39 139 148 47 158 26 166 152 22 25 85</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\FatFs\option\syscall.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 212</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 80</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 178 62 49 202 65 108 64 191 188 194 201 111 164 185 112 131 240 33 133 141 200 163 113 199 215 92 149 61 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 121</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\LRNDIS\Src\usb_device.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 150</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 134</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 164 185 112 131 240 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 22 51 178 182 67 45 25 85 192 186 56 55 179 204</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\LRNDIS\Src\usbd_conf.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 236</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33 133 141 200 62 49 202 65 108 64 191 163 113 199 215 92 164 185 112 131 240 149 61 188 95 35 135 138 140 155 42 39 139 148 47 158 26 166 152 22 51 178 182 67 45 25 85 186 56 55 179 204</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\LRNDIS\Src\usbd_desc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 213</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 214</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45 51 61 62 49 202 65 108 64 191 188 95 178 182 67 33 133 141 200 163 113 199 215 92 164 185 112 131 240 149 35 135 138 140 155 42 39 139 148 47 158 26 166 152 22 25 85 192</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\LRNDIS\Src\usbd_rndis.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 31</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 34</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 186 25 22 51 61 62 49 202 65 108 64 191 188 95 178 182 67 33 133 141 200 163 113 199 215 92 164 185 112 131 240 149 35 135 138 140 155 42 39 139 148 47 158 26 166 152 45 85 56 55 179 204 192</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 174</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 160</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 85 22 51 61 62 49 202 65 108 64 191 188 95 178 182 67 33 133 141 200 163 113 199 215 92 164 185 112 131 240 149 35 135 138 140 155 42 39 139 148 47 158 26 166 152 25 45</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Libraries\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 169</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25 22 51 61 62 49 202 65 108 64 191 188 95 178 182 67 33 133 141 200 163 113 199 215 92 164 185 112 131 240 149 35 135 138 140 155 42 39 139 148 47 158 26 166 152 45 85</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\WEB\dhcp-server\dhserver.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 40</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 173</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 116 200 62 49 202 65 108 64 191 56 61 188 95 182 67 193 203 107 68 115 184 197 110 96 57 106 101 59 114 66 118</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+</project>
+
+
