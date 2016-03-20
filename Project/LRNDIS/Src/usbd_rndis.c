@@ -28,14 +28,75 @@
 
 // RNDIS to USB Mapping https://msdn.microsoft.com/en-us/library/windows/hardware/ff570657(v=vs.85).aspx
 
+#include "usbd_conf.h"
 #include "usbd_rndis.h"
 #include "usbd_desc.h"
 #include "usbd_ctlreq.h"
 
+/*******************************************************************************
+Private constants
+*******************************************************************************/
+#define ETH_HEADER_SIZE                 14
+#define ETH_MIN_PACKET_SIZE             60
+#define ETH_MAX_PACKET_SIZE             (ETH_HEADER_SIZE + ETH_MTU)
+#define RNDIS_HEADER_SIZE               sizeof(rndis_data_packet_t)
+#define RNDIS_RX_BUFFER_SIZE            (ETH_MAX_PACKET_SIZE + RNDIS_HEADER_SIZE)
+
+const uint32_t OIDSupportedList[] = 
+{
+  OID_GEN_SUPPORTED_LIST,
+  OID_GEN_HARDWARE_STATUS,
+  OID_GEN_MEDIA_SUPPORTED,
+  OID_GEN_MEDIA_IN_USE,
+  //    OID_GEN_MAXIMUM_LOOKAHEAD,
+  OID_GEN_MAXIMUM_FRAME_SIZE,
+  OID_GEN_LINK_SPEED,
+  //    OID_GEN_TRANSMIT_BUFFER_SPACE,
+  //    OID_GEN_RECEIVE_BUFFER_SPACE,
+  OID_GEN_TRANSMIT_BLOCK_SIZE,
+  OID_GEN_RECEIVE_BLOCK_SIZE,
+  OID_GEN_VENDOR_ID,
+  OID_GEN_VENDOR_DESCRIPTION,
+  OID_GEN_VENDOR_DRIVER_VERSION,
+  OID_GEN_CURRENT_PACKET_FILTER,
+  //    OID_GEN_CURRENT_LOOKAHEAD,
+  //    OID_GEN_DRIVER_VERSION,
+  OID_GEN_MAXIMUM_TOTAL_SIZE,
+  OID_GEN_PROTOCOL_OPTIONS,
+  OID_GEN_MAC_OPTIONS,
+  OID_GEN_MEDIA_CONNECT_STATUS,
+  OID_GEN_MAXIMUM_SEND_PACKETS,
+  OID_802_3_PERMANENT_ADDRESS,
+  OID_802_3_CURRENT_ADDRESS,
+  OID_802_3_MULTICAST_LIST,
+  OID_802_3_MAXIMUM_LIST_SIZE,
+  OID_802_3_MAC_OPTIONS
+};
+
+#define OID_LIST_LENGTH (sizeof(OIDSupportedList) / sizeof(*OIDSupportedList))
+#define ENC_BUF_SIZE    (OID_LIST_LENGTH * 4 + 32)
+
+/*******************************************************************************
+Private type defenitions
+*******************************************************************************/
+typedef  struct  rndis_ethernet_frame 
+{
+  rndis_data_packet_t rndis_header;                      
+  uint8_t data[ETH_MAX_PACKET_SIZE];
+  uint16_t data_size;
+  bool ZLP;
+  bool wrprotected; 
+}rndis_EthernetFrameTypeDef;
+
+/*******************************************************************************
+Private function definitions
+*******************************************************************************/
+void response_available(USBD_HandleTypeDef *pdev);
+bool rndis_send(void);
+
 /*********************************************
 RNDIS Device library callbacks
 *********************************************/
-
 static uint8_t  usbd_rndis_init                         (USBD_HandleTypeDef *pdev, uint8_t cfgidx);
 static uint8_t  usbd_rndis_deinit                       (USBD_HandleTypeDef *pdev, uint8_t cfgidx);
 static uint8_t  usbd_rndis_setup                        (USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *req);
@@ -47,31 +108,23 @@ static uint8_t  rndis_iso_in_incomplete                 (USBD_HandleTypeDef *pde
 static uint8_t  rndis_iso_out_incomplete                (USBD_HandleTypeDef *pdev, uint8_t epnum);
 static uint8_t  *usbd_rndis_GetDeviceQualifierDesc      (uint16_t *length);
 static uint8_t  *usbd_rndis_GetCfgDesc                  (uint16_t *length);
-/*********************************************
-RNDIS specific management functions
-*********************************************/
 
+/*******************************************************************************
+Private variables
+*******************************************************************************/
+USBD_HandleTypeDef *pDev;
 
 uint8_t station_hwaddr[6] = { STATION_HWADDR };
 uint8_t permanent_hwaddr[6] = { PERMANENT_HWADDR };
-
 usb_eth_stat_t usb_eth_stat = { 0, 0, 0, 0 };
+rndis_state_t rndis_state = rndis_uninitialized;
 uint32_t oid_packet_filter = 0x0000000;
-//char rndis_rx_buffer[RNDIS_RX_BUFFER_SIZE];
-//uint8_t usb_rx_buffer[RNDIS_DATA_OUT_SZ];
-//uint8_t *rndis_tx_ptr = NULL;
-//bool rndis_first_tx = true;
-//bool rndis_data_tx = false;
-bool rndis_ZLP_required = false;
-//int rndis_sended = 0;
-rndis_state_t rndis_state;
-extern PCD_HandleTypeDef hpcd_USB_FS;
+uint8_t encapsulated_buffer[ENC_BUF_SIZE];
 
 rndis_EthernetFrameTypeDef rndis_tx_frame;
 rndis_EthernetFrameTypeDef* prndis_tx_frame = &rndis_tx_frame;
 rndis_EthernetFrameTypeDef rndis_rx_frame;
 rndis_EthernetFrameTypeDef* prndis_rx_frame = &rndis_rx_frame;
-USBD_HandleTypeDef *pDev;
 
 USBD_ClassTypeDef usbd_rndis =
 {
@@ -201,8 +254,85 @@ __ALIGN_BEGIN uint8_t USBD_DeviceQualifierDesc[USB_LEN_DEV_QUALIFIER_DESC] __ALI
   0x01,
   0x00,
 };
-void response_available(USBD_HandleTypeDef *pdev);
-bool rndis_send(void);
+
+
+
+/*******************************************************************************
+                            API functions 
+*******************************************************************************/
+__weak void rndis_initialized_cb(void)
+{
+}
+
+bool rndis_rx_start(void)
+{
+  if (!prndis_rx_frame->wrprotected)
+    return false;
+  
+  prndis_rx_frame->wrprotected = false;
+  USBD_LL_PrepareReceive(pDev, 
+                         RNDIS_DATA_OUT_EP,                                      
+                         (uint8_t*)prndis_rx_frame,
+                         RNDIS_RX_BUFFER_SIZE);
+  return true;
+}
+
+/*bool rndis_rx_started(void)
+{
+  return (!prndis_rx_frame->wrprotected)
+}
+*/
+uint8_t *rndis_rx_data(void)
+{
+  if (prndis_rx_frame->wrprotected)
+    return (uint8_t*)(&(prndis_rx_frame->data));
+  else
+    return NULL;
+}
+
+uint16_t rndis_rx_size(void)
+{
+  if (prndis_rx_frame->wrprotected)
+    return prndis_rx_frame->data_size;
+  else
+    return 0;
+}
+
+__weak void rndis_rx_ready_cb(void)
+{
+}
+
+bool rndis_tx_start(uint8_t *data, uint16_t size)
+{
+uint16_t i;
+  //if tx buffer is already transfering or has incorrect length
+  if ((prndis_tx_frame->wrprotected) || (size > ETH_MAX_PACKET_SIZE) || (size == 0))
+  {
+    usb_eth_stat.txbad++;
+    return false;
+  }
+
+  for (i = 0; i < size; i++)
+  {
+    *(prndis_tx_frame->data + i) = *data;
+    data++;
+  }
+  prndis_tx_frame->data_size = size;
+  rndis_send();
+  return true;
+}
+
+bool rndis_tx_started(void)
+{
+  return !prndis_tx_frame->wrprotected;
+}
+
+__weak void rndis_tx_ready_cb(void)
+{
+}
+/*******************************************************************************
+                            /API functions 
+*******************************************************************************/
 
 static uint8_t usbd_rndis_init(USBD_HandleTypeDef  *pdev, uint8_t cfgidx)
 {
@@ -239,42 +369,6 @@ static uint8_t  usbd_rndis_deinit(USBD_HandleTypeDef  *pdev, uint8_t cfgidx)
               RNDIS_DATA_OUT_EP);
   return USBD_OK;
 }
-
-const uint32_t OIDSupportedList[] = 
-{
-  OID_GEN_SUPPORTED_LIST,
-  OID_GEN_HARDWARE_STATUS,
-  OID_GEN_MEDIA_SUPPORTED,
-  OID_GEN_MEDIA_IN_USE,
-  //    OID_GEN_MAXIMUM_LOOKAHEAD,
-  OID_GEN_MAXIMUM_FRAME_SIZE,
-  OID_GEN_LINK_SPEED,
-  //    OID_GEN_TRANSMIT_BUFFER_SPACE,
-  //    OID_GEN_RECEIVE_BUFFER_SPACE,
-  OID_GEN_TRANSMIT_BLOCK_SIZE,
-  OID_GEN_RECEIVE_BLOCK_SIZE,
-  OID_GEN_VENDOR_ID,
-  OID_GEN_VENDOR_DESCRIPTION,
-  OID_GEN_VENDOR_DRIVER_VERSION,
-  OID_GEN_CURRENT_PACKET_FILTER,
-  //    OID_GEN_CURRENT_LOOKAHEAD,
-  //    OID_GEN_DRIVER_VERSION,
-  OID_GEN_MAXIMUM_TOTAL_SIZE,
-  OID_GEN_PROTOCOL_OPTIONS,
-  OID_GEN_MAC_OPTIONS,
-  OID_GEN_MEDIA_CONNECT_STATUS,
-  OID_GEN_MAXIMUM_SEND_PACKETS,
-  OID_802_3_PERMANENT_ADDRESS,
-  OID_802_3_CURRENT_ADDRESS,
-  OID_802_3_MULTICAST_LIST,
-  OID_802_3_MAXIMUM_LIST_SIZE,
-  OID_802_3_MAC_OPTIONS
-};
-
-#define OID_LIST_LENGTH (sizeof(OIDSupportedList) / sizeof(*OIDSupportedList))
-#define ENC_BUF_SIZE    (OID_LIST_LENGTH * 4 + 32)
-
-uint8_t encapsulated_buffer[ENC_BUF_SIZE];
 
 static uint8_t usbd_rndis_setup(USBD_HandleTypeDef  *pdev, USBD_SetupReqTypedef *req)
 {
@@ -484,6 +578,7 @@ void rndis_handle_set_msg(USBD_HandleTypeDef  *pdev)
     else 
     {
       rndis_state = rndis_initialized;
+      rndis_initialized_cb();
     }
     break;
     
@@ -643,6 +738,7 @@ static uint8_t usbd_rndis_data_in(USBD_HandleTypeDef *pdev, uint8_t epnum)
       usb_eth_stat.txbad--;
       usb_eth_stat.txok++;
       prndis_tx_frame->wrprotected = false;
+      rndis_tx_ready_cb();
     }
   }
   return USBD_OK;
@@ -679,6 +775,7 @@ rndis_data_packet_t *pheader;
   prndis_rx_frame->wrprotected = true;
   
   usb_eth_stat.rxok++;
+  rndis_rx_ready_cb();
 }
 
 // Data Channel         https://msdn.microsoft.com/en-us/library/windows/hardware/ff546305(v=vs.85).aspx
@@ -690,15 +787,6 @@ static uint8_t usbd_rndis_data_out(USBD_HandleTypeDef *pdev, uint8_t epnum)
     handle_packet(prndis_rx_frame, RNDIS_RX_BUFFER_SIZE - ep->xfer_len - RNDIS_DATA_OUT_SZ + ep->xfer_count);
   }
   return USBD_OK;
-}
-
-void rndis_continue_receiving(void)
-{
-  prndis_rx_frame->wrprotected = false;
-  USBD_LL_PrepareReceive(pDev, 
-                         RNDIS_DATA_OUT_EP,                                      
-                         (uint8_t*)prndis_rx_frame,
-                         RNDIS_RX_BUFFER_SIZE);
 }
 
 // Start Of Frame event management
@@ -747,26 +835,14 @@ static uint8_t  *usbd_rndis_GetCfgDesc (uint16_t *length)
   return usbd_rndis_CfgDesc;
 }
 
-bool rndis_can_send(void)
-{
-  return !prndis_tx_frame->wrprotected;
-}
-
-bool rndis_received(void)
+/*bool rndis_received(void)
 {
   return prndis_rx_frame->wrprotected;
-}
+}*/
 
 //Sends ethernet frame whith size bytes, located in rndis_tx_frame, previously making RNDIS header.
 bool rndis_send(void)
 {
-  //if tx buffer is already transfering or has incorrect length
-  if ((prndis_tx_frame->wrprotected) || (prndis_tx_frame->data_size > ETH_MAX_PACKET_SIZE))
-  {
-    usb_eth_stat.txbad++;
-    return false;
-  }
-
   prndis_tx_frame->wrprotected = true;
   
   memset(&(prndis_tx_frame->rndis_header), 0, RNDIS_HEADER_SIZE);
@@ -782,10 +858,10 @@ bool rndis_send(void)
     prndis_tx_frame->ZLP = false;
   
   __disable_irq();      //TODO IRQ
-  USBD_LL_Transmit ((&hpcd_USB_FS)->pData, 
+  USBD_LL_Transmit (pDev, 
                     RNDIS_DATA_IN_EP,                                      
-                    (uint8_t *)&rndis_tx_frame,
-                    rndis_tx_frame.rndis_header.MessageLength);
+                    (uint8_t *)prndis_tx_frame,
+                    prndis_tx_frame->rndis_header.MessageLength);
   __enable_irq(); 
 
   //Increment error counter and then decrement in data_in if OK
@@ -794,7 +870,7 @@ bool rndis_send(void)
   return true;
 }
 
-uint8_t *rndis_get_tx_buffer(void)
+/*uint8_t *rndis_get_tx_buffer(void)
 {
   if (prndis_tx_frame->wrprotected)
     return NULL;
@@ -802,22 +878,12 @@ uint8_t *rndis_get_tx_buffer(void)
     return (uint8_t*)(&(prndis_tx_frame->data));
 }
 
-uint8_t *rndis_get_rx_buffer(void)
-{
-  return (uint8_t*)(&(prndis_rx_frame->data));
-}
-
 void rndis_set_tx_size(uint16_t size)
 {
   if (prndis_tx_frame->wrprotected)
     usb_eth_stat.txbad++;
   prndis_tx_frame->data_size = size;
-}
-
-uint16_t rndis_get_rx_size(void)
-{
-  return prndis_rx_frame->data_size;
-}
+}*/
 
 void response_available(USBD_HandleTypeDef *pdev)
 {

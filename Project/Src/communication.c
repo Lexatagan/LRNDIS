@@ -41,47 +41,42 @@ err_t linkoutput_fn(struct netif *netif, struct pbuf *p)
   struct pbuf *q;
   uint8_t *pbuffer;
   
+  uint8_t Data[1600];                                                           //TODO
+  
   uint16_t size = 0;
   for (i = 0; i < 200; i++)
   {
-    if (rndis_can_send()) break;
+    if (rndis_tx_started()) break;
     msleep(1);
   }
   
-  pbuffer = rndis_get_tx_buffer();
+  pbuffer = Data;
   if (pbuffer == NULL)
     return ERR_USE;
-  
-  for(q = p; q != NULL; q = q->next)
+  for(q = p; q != NULL; q = q->next)                                            //TODO: exclude cycle
   {
-    if (size + q->len > ETH_MAX_PACKET_SIZE)
-      return ERR_ARG;
+    /*if (size + q->len > ETH_MAX_PACKET_SIZE)
+      return ERR_ARG;*/
     memcpy(pbuffer + size, (char *)q->payload, q->len);
     size += q->len;
   }
-  rndis_set_tx_size(size);
-  rndis_send();
+  rndis_tx_start(pbuffer, size);
   return ERR_OK;
 }
 
 // Receiving Ethernet packets
 void usb_polling(void)
 {
-  if (!rndis_received()) 
+  if (!rndis_rx_data()) 
     return;
   
-  __disable_irq();
   struct pbuf *frame;
-  frame = pbuf_alloc(PBUF_RAW, rndis_get_rx_size(), PBUF_POOL);
+  frame = pbuf_alloc(PBUF_RAW, rndis_rx_size(), PBUF_POOL);
   if (frame == NULL) 
-  {
-    __enable_irq();
     return;
-  }
-  memcpy(frame->payload, rndis_get_rx_buffer(), rndis_get_rx_size());
-  frame->len = rndis_get_rx_size();
-  rndis_continue_receiving();
-  __enable_irq();
+  memcpy(frame->payload, rndis_rx_data(), rndis_rx_size());
+  frame->len = rndis_rx_size();
+  rndis_rx_start();
   ethernet_input(frame, &netif_data);
   pbuf_free(frame);
 }

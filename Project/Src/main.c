@@ -71,9 +71,17 @@ int main(void)
   {
     usb_polling();     // usb device polling
     stmr();            // call software timers
-    cpuLoad.cnt++;
+    cpuLoad.cnt++;     // 
   }
 
+}
+
+void rndis_tx_ready_cb(void)
+{
+}
+
+void rndis_rx_ready_cb(void)
+{
 }
 
 #ifdef USE_FULL_ASSERT

@@ -57,6 +57,30 @@
   * @{
   */ 
 
+#define RNDIS_CONTROL_OUT_EP                            0x00
+#define RNDIS_CONTROL_IN_EP                             0x80
+#define RNDIS_NOTIFICATION_IN_EP                        0x81
+#define RNDIS_DATA_IN_EP                                0x82
+#define RNDIS_DATA_OUT_EP                               0x03
+#define RNDIS_NOTIFICATION_IN_SZ                        0x0008
+#define RNDIS_DATA_IN_SZ                                0x0040
+#define RNDIS_DATA_OUT_SZ                               0x0040
+
+#define RNDIS_CONTROL_OUT_PMAADDRESS                    0x08 * 4                //8 bytes per EP
+#define RNDIS_CONTROL_IN_PMAADDRESS                     RNDIS_CONTROL_OUT_PMAADDRESS + USB_MAX_EP0_SIZE
+#define RNDIS_NOTIFICATION_IN_PMAADDRESS                RNDIS_CONTROL_IN_PMAADDRESS + USB_MAX_EP0_SIZE
+#define RNDIS_DATA_IN_PMAADDRESS                        RNDIS_NOTIFICATION_IN_PMAADDRESS + RNDIS_NOTIFICATION_IN_SZ
+#define RNDIS_DATA_OUT_PMAADDRESS                       RNDIS_DATA_IN_PMAADDRESS + RNDIS_DATA_IN_SZ
+
+#define RNDIS_CONFIG_DESC_SIZE                          0x09
+#define RNDIS_TOTAL_CONFIG_DESC_SIZE                    0x0043                  /*TODO 0x3E according to MSDN*/
+#define RNDIS_INTERFACE_DESC_SIZE                       0x09
+#define RNDIS_ENDPOINT_DESC_SIZE                        0x07
+
+#define USB_DEVICE_CLASS_RNDIS                          0x02
+#define RNDIS_SUBCLASS                                  0x02
+#define RNDIS_PROTOCOL_UNDEFINED                        0xff
+
 /*---------- -----------*/
 #define USBD_MAX_NUM_INTERFACES     1
 /*---------- -----------*/

@@ -263,19 +263,20 @@ typedef uint32_t rndis_NumOOBDataElements_t;
 typedef uint32_t rndis_PerPacketInfoOffset_t;
 typedef uint32_t rndis_PerPacketInfoLength_t;
 
-typedef struct{
-	rndis_MessageType_t	        MessageType;
-	rndis_MessageLength_t		MessageLength;
-	rndis_DataOffset_t	        DataOffset;
-	rndis_DataLength_t	        DataLength;
-	rndis_OOBDataOffset_t		OOBDataOffset;
-	rndis_OOBDataLength_t		OOBDataLength;
-	rndis_NumOOBDataElements_t	NumOOBDataElements;
-	rndis_PerPacketInfoOffset_t	PerPacketInfoOffset;
-	rndis_PerPacketInfoLength_t     PerPacketInfoLength;
-	rndis_DeviceVcHandle_t		DeviceVcHandle;
-	rndis_Reserved_t	        Reserved;
-	}rndis_data_packet_t;
+typedef struct
+{
+  rndis_MessageType_t	        MessageType;
+  rndis_MessageLength_t		MessageLength;
+  rndis_DataOffset_t	        DataOffset;
+  rndis_DataLength_t	        DataLength;
+  rndis_OOBDataOffset_t		OOBDataOffset;
+  rndis_OOBDataLength_t		OOBDataLength;
+  rndis_NumOOBDataElements_t	NumOOBDataElements;
+  rndis_PerPacketInfoOffset_t	PerPacketInfoOffset;
+  rndis_PerPacketInfoLength_t     PerPacketInfoLength;
+  rndis_DeviceVcHandle_t		DeviceVcHandle;
+  rndis_Reserved_t	        Reserved;
+}rndis_data_packet_t;
 
 typedef uint32_t rndis_ClassInformationOffset_t;
 typedef uint32_t rndis_Size_t;
