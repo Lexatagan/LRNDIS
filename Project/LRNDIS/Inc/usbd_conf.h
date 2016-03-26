@@ -63,7 +63,7 @@
 #define RNDIS_DATA_IN_EP                                0x82
 #define RNDIS_DATA_OUT_EP                               0x03
 #define RNDIS_NOTIFICATION_IN_SZ                        0x0008
-#define RNDIS_DATA_IN_SZ                                0x0040
+#define RNDIS_DATA_IN_SZ                                0x0040                  //Must be a power of 2
 #define RNDIS_DATA_OUT_SZ                               0x0040
 
 #define RNDIS_CONTROL_OUT_PMAADDRESS                    0x08 * 4                //8 bytes per EP

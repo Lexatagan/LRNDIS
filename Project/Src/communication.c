@@ -46,14 +46,14 @@ err_t linkoutput_fn(struct netif *netif, struct pbuf *p)
   uint16_t size = 0;
   for (i = 0; i < 200; i++)
   {
-    if (rndis_tx_started()) break;
+    if (!rndis_tx_started()) break;
     msleep(1);
   }
   
   pbuffer = Data;
   if (pbuffer == NULL)
     return ERR_USE;
-  for(q = p; q != NULL; q = q->next)                                            //TODO: exclude cycle
+  for(q = p; q != NULL; q = q->next)                                            //TODO
   {
     /*if (size + q->len > ETH_MAX_PACKET_SIZE)
       return ERR_ARG;*/
