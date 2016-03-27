@@ -40,12 +40,17 @@
 #define STATION_HWADDR                                  0x20,0x89,0x84,0x6A,0x96,0xAA  // station MAC
 #define PERMANENT_HWADDR                                0x20,0x89,0x84,0x6A,0x96,0xAA  // permanent MAC
 
+#define ETH_HEADER_SIZE                 14
+#define ETH_MIN_PACKET_SIZE             60
+#define ETH_MAX_PACKET_SIZE             (ETH_HEADER_SIZE + ETH_MTU)
+#define RNDIS_HEADER_SIZE               sizeof(rndis_data_packet_t)
+#define RNDIS_RX_BUFFER_SIZE            (ETH_MAX_PACKET_SIZE + RNDIS_HEADER_SIZE)
+
 extern USBD_ClassTypeDef  usbd_rndis;
 extern usb_eth_stat_t usb_eth_stat;
 extern rndis_state_t rndis_state;
 
 bool rndis_rx_start(void);
-//bool rndis_rx_started(void);
 uint8_t *rndis_rx_data(void);
 uint16_t rndis_rx_size(void);
 

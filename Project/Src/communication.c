@@ -41,7 +41,7 @@ err_t linkoutput_fn(struct netif *netif, struct pbuf *p)
   struct pbuf *q;
   uint8_t *pbuffer;
   
-  uint8_t Data[1600];                                                           //TODO
+  static uint8_t Data[1600];                                                           //TODO
   
   uint16_t size = 0;
   for (i = 0; i < 200; i++)
@@ -189,6 +189,68 @@ const char *ctl_cgi_handler(int index, int n_params, char *params[], char *value
   return "/state.shtml";
 }
 
+#ifdef TX_ZLP_TEST
+static uint16_t ssi_handler(int index, char *insert, int ins_len)
+{
+  int res;
+  static uint8_t i;
+  static uint8_t c;
+  
+  if (ins_len < 32) return 0;
+  
+  if (c++ == 10)
+  {
+    i++;
+    i &= 0x07;
+    c = 0;
+  }
+  switch (index)
+  {
+  case 0: // systick
+    res = snprintf(insert, ins_len, "%s", "1234");
+    break;
+  case 1: // PORTC
+    {
+      res = snprintf(insert, ins_len, "%u, %u, %u, %u, %u, %u, %u, %u", 10, 10, 10, 10, 10, 10, 10, 10);
+      break;
+    }
+  case 2: // PA0
+    *insert = '0' + (i == 0);
+    res = 1;
+    break;
+  case 3: // PA1
+    *insert = '0' + (i == 1);
+    res = 1;
+    break;
+  case 4: // PA2
+    *insert = '0' + (i == 2);
+    res = 1;
+    break;
+  case 5: // PA3
+    *insert = '0' + (i == 3);
+    res = 1;
+    break;
+  case 6: // PA4
+    *insert = '0' + (i == 4);
+    res = 1;
+    break;
+  case 7: // PA5
+    *insert = '0' + (i == 5);
+    res = 1;
+    break;
+  case 8: // PA6
+    *insert = '0' + (i == 6);
+    res = 1;
+    break;
+  case 9: // PA7
+    *insert = '0' + (i == 7);
+    res = 1;
+    break;
+  }
+  
+  return res;
+}
+#else
 static uint16_t ssi_handler(int index, char *insert, int ins_len)
 {
   int res;
@@ -250,3 +312,4 @@ static uint16_t ssi_handler(int index, char *insert, int ins_len)
   
   return res;
 }
+#endif
