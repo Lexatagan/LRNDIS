@@ -37,22 +37,24 @@ static uint16_t ssi_handler(int index, char *insert, int ins_len);
 // Transceiving Ethernet packets
 err_t linkoutput_fn(struct netif *netif, struct pbuf *p)
 {
-  int i;
-  struct pbuf *q;
-  uint8_t *pbuffer;
-  
-  static uint8_t Data[1600];                                                           //TODO
-  
-  uint16_t size = 0;
+int i;
+struct pbuf *q;
+uint8_t *pbuffer;
+static uint8_t Data[RNDIS_RX_BUFFER_SIZE];                                      
+uint16_t size = 0;
+
   for (i = 0; i < 200; i++)
   {
     if (!rndis_tx_started()) break;
     msleep(1);
   }
+  if (rndis_tx_started())
+    return ERR_USE;
+  
+  /*while (!rndis_rx_data())    //TODO
+  {}*/
   
   pbuffer = Data;
-  if (pbuffer == NULL)
-    return ERR_USE;
   for(q = p; q != NULL; q = q->next)                                            //TODO
   {
     /*if (size + q->len > ETH_MAX_PACKET_SIZE)

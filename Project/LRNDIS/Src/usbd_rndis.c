@@ -254,11 +254,13 @@ bool rndis_rx_start(void)
   if (rndis_rx_started)
     return false;
   
+  __disable_irq();      //TODO IRQ
   rndis_rx_started = true;
   USBD_LL_PrepareReceive(pDev, 
                          RNDIS_DATA_OUT_EP,                                      
                          rndis_rx_buffer,
                          RNDIS_RX_BUFFER_SIZE);
+  __enable_irq();      //TODO IRQ
   return true;
 }
 
@@ -294,31 +296,34 @@ rndis_data_packet_t *hdr;
     usb_eth_stat.txbad++;
     return false;
   }
-
-
+  
   rndis_tx_transmitting = true;
   rndis_tx_ptr = data;
   rndis_tx_data_size = size;
 
+
   hdr = (rndis_data_packet_t *)first;
   memset(hdr, 0, RNDIS_HEADER_SIZE);
   hdr->MessageType = REMOTE_NDIS_PACKET_MSG;
-  hdr->MessageLength = RNDIS_HEADER_SIZE + rndis_tx_data_size;
+  hdr->MessageLength = RNDIS_HEADER_SIZE + size;
   hdr->DataOffset = RNDIS_HEADER_SIZE - offsetof(rndis_data_packet_t, DataOffset);
-  hdr->DataLength = rndis_tx_data_size;
+  hdr->DataLength = size;
 
   sended = RNDIS_DATA_IN_SZ - RNDIS_HEADER_SIZE;
-  if (sended > rndis_tx_data_size)
-    sended = rndis_tx_data_size;
-  memcpy(first + RNDIS_HEADER_SIZE, rndis_tx_ptr, sended);
+  if (sended > size)
+    sended = size;
+  memcpy(first + RNDIS_HEADER_SIZE, data, sended);
   rndis_tx_ptr += sended;
   rndis_tx_data_size -= sended;
+
   
   //http://habrahabr.ru/post/248729/
   if (hdr->MessageLength % RNDIS_DATA_IN_SZ == 0)
     rndis_tx_ZLP = true;
-  
-  __disable_irq();      //TODO IRQ
+
+  //We should disable USB_OUT(EP3) IRQ, because if IRQ will happens with locked HAL (__HAL_LOCK() 
+  //in USBD_LL_Transmit()), the program will fail with big probability 
+  __disable_irq();
   USBD_LL_Transmit (pDev, 
                     RNDIS_DATA_IN_EP,                                      
                     (uint8_t *)first,

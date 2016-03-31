@@ -40,8 +40,6 @@
 /** Set this to 1 to include "fsdata_custom.c" instead of "fsdata.c" for the
  * file system (to prevent changing the file included in CVS) */
 
-extern uint32_t XXX;   //TODO
-
 /*-----------------------------------------------------------------------------------*/
 
 #if LWIP_HTTPD_CUSTOM_FILES
